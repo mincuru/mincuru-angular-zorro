@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @Component({
@@ -9,7 +7,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     standalone: true,
-    imports: [NzLayoutModule, NzMenuModule, RouterLink, NzIconModule, RouterOutlet]
+    imports: [NzLayoutModule, RouterLink, RouterOutlet]
 })
 export class AppComponent {
   isCollapsed = false;

@@ -1,5 +1,5 @@
 {
-  "name": "mincuru-angular-nostandalone",
+  "name": "mincuru-angular-zorro",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -35,5 +35,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.1.3"
+  },
+  "volta": {
+    "node": "18.16.0",
+    "yarn": "3.6.0",
+    "npm": "9.7.1"
   }
 }

@@ -7,7 +7,6 @@ import {
   FormOutline,
   DashboardOutline,
 } from '@ant-design/icons-angular/icons';
-import { CarsComponent } from './pages/cars/cars.component';
 
 const icons = [
   MenuFoldOutline,
@@ -20,8 +19,6 @@ const icons = [
   imports: [NzIconModule],
   exports: [NzIconModule],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
-  declarations: [
-    //    CarsComponent
-  ],
+  declarations: [],
 })
 export class IconsProviderModule {}

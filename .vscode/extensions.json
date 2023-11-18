@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "ms-ceintl.vscode-language-pack-ja",
     "angular.ng-template",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig"
   ]
 }

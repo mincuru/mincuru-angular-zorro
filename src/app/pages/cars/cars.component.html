@@ -4,32 +4,74 @@
     nzWidth="256px"
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null">
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+    [nzTrigger]="null"
+    nzTheme="light">
+    <ul nz-menu nzMode="inline">
+      <li nz-submenu nzOpen nzTitle="メーカー名">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+          <li nz-menu-item *ngFor="let maker of filter.makers">
+            <label nz-checkbox [(ngModel)]="maker.checked" [nzValue]="maker.value">{{ maker.title }}</label>
           </li>
         </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+      </li> 
+    </ul>
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-divider ></li>
+      <li nz-submenu nzOpen nzTitle="ボディタイプ">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
+          <li nz-menu-item *ngFor="let bodyType of filter.bodyTypes">
+            <label nz-checkbox [(ngModel)]="bodyType.checked" [nzValue]="bodyType.value">{{ bodyType.title }}</label>
           </li>
         </ul>
-      </li>
+      </li> 
+    </ul>
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-divider ></li>
+      <li nz-submenu nzOpen nzTitle="パワートレーン">
+        <ul>
+          <li nz-menu-item *ngFor="let powerTrain of filter.powerTrains">
+            <label nz-checkbox [(ngModel)]="powerTrain.checked" [nzValue]="powerTrain.value">{{ powerTrain.title }}</label>
+          </li>
+        </ul>
+      </li> 
+    </ul>
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-divider ></li>
+      <li nz-submenu nzOpen nzTitle="駆動方式">
+        <ul>
+          <li nz-menu-item *ngFor="let driveSystem of filter.driveSystems">
+            <label nz-checkbox [(ngModel)]="driveSystem.checked" [nzValue]="driveSystem.value">{{ driveSystem.title }}</label>
+          </li>
+        </ul>
+      </li> 
     </ul>
   </nz-sider>
   <nz-content>
     <div class="inner-content">
+      <nz-tag 
+        nzMode="closeable" 
+        (nzOnClose)="onCloseMakerTag(item.value)" 
+        *ngFor="let item of checkedFilter().makers">
+        {{ item.title }}
+      </nz-tag>
+      <nz-tag 
+        nzMode="closeable" 
+        (nzOnClose)="onCloseBodyTypeTag(item.value)" 
+        *ngFor="let item of checkedFilter().bodyTypes">
+        {{ item.title }}
+      </nz-tag>
+      <nz-tag 
+        nzMode="closeable" 
+        (nzOnClose)="onClosePowerTrainTag(item.value)" 
+        *ngFor="let item of checkedFilter().powerTrains">
+        {{ item.title }}
+      </nz-tag>
+      <nz-tag 
+        nzMode="closeable" 
+        (nzOnClose)="onCloseDriveSystemTag(item.value)" 
+        *ngFor="let item of checkedFilter().driveSystems">
+        {{ item.title }}
+      </nz-tag>
       <p>cars works!</p>
     </div>
   </nz-content>

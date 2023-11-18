@@ -11,4 +11,5 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 })
 export class AppComponent {
   isCollapsed = false;
+  title = 'mincuru-angular-nostandalone';
 }

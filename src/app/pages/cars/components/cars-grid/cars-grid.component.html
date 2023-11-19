@@ -1,0 +1,32 @@
+<div class="grid-container">
+  <div *ngFor="let car of cars">
+    <nz-card nzHoverable style="width: 260px" [nzCover]="coverTemplate">
+      <nz-card-meta
+        nzTitle="{{ car.modelName }}"
+        [nzDescription]="descriptionTemplate"
+      ></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="{{ car.modelName }}" src="{{ car.imageUrl }}" class="image" />
+    </ng-template>
+    <ng-template #descriptionTemplate>
+      <div class="description">
+        <div>
+          <span>{{ car.price }}円</span>
+        </div>
+        <div>
+          <span
+            >全長:{{ car.body.length }}mm, 全幅:{{ car.body.width }}mm, 全高:{{
+              car.body.height
+            }}mm
+          </span>
+        </div>
+        <div>
+          <span
+            >{{ car.driveSystem }}, {{ car.powerTrain }}, {{ car.fuelType }}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

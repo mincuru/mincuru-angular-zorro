@@ -1,0 +1,17 @@
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+/* .grid-item {
+  flex: 2 1 auto;
+} */
+
+.image {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}

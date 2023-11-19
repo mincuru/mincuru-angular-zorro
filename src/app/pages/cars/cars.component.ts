@@ -7,6 +7,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { CarsFilter } from './cars-filter';
+import { CarsGridComponent } from './components/cars-grid/cars-grid.component';
 
 @Component({
   selector: 'app-cars',
@@ -21,6 +22,7 @@ import { CarsFilter } from './cars-filter';
     NzIconModule,
     NzCheckboxModule,
     NzTagModule,
+    CarsGridComponent,
   ],
 })
 export class CarsComponent {

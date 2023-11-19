@@ -70,34 +70,37 @@
   </nz-sider>
   <nz-content>
     <div class="inner-content">
-      <nz-tag
-        nzMode="closeable"
-        (nzOnClose)="onCloseMakerTag(item.value)"
-        *ngFor="let item of checkedFilter().makers"
-      >
-        {{ item.title }}
-      </nz-tag>
-      <nz-tag
-        nzMode="closeable"
-        (nzOnClose)="onCloseBodyTypeTag(item.value)"
-        *ngFor="let item of checkedFilter().bodyTypes"
-      >
-        {{ item.title }}
-      </nz-tag>
-      <nz-tag
-        nzMode="closeable"
-        (nzOnClose)="onClosePowerTrainTag(item.value)"
-        *ngFor="let item of checkedFilter().powerTrains"
-      >
-        {{ item.title }}
-      </nz-tag>
-      <nz-tag
-        nzMode="closeable"
-        (nzOnClose)="onCloseDriveSystemTag(item.value)"
-        *ngFor="let item of checkedFilter().driveSystems"
-      >
-        {{ item.title }}
-      </nz-tag>
+      <div class="tag-area">
+        <nz-tag
+          nzMode="closeable"
+          (nzOnClose)="onCloseMakerTag(item.value)"
+          *ngFor="let item of checkedFilter().makers"
+        >
+          {{ item.title }}
+        </nz-tag>
+        <nz-tag
+          nzMode="closeable"
+          (nzOnClose)="onCloseBodyTypeTag(item.value)"
+          *ngFor="let item of checkedFilter().bodyTypes"
+        >
+          {{ item.title }}
+        </nz-tag>
+        <nz-tag
+          nzMode="closeable"
+          (nzOnClose)="onClosePowerTrainTag(item.value)"
+          *ngFor="let item of checkedFilter().powerTrains"
+        >
+          {{ item.title }}
+        </nz-tag>
+        <nz-tag
+          nzMode="closeable"
+          (nzOnClose)="onCloseDriveSystemTag(item.value)"
+          *ngFor="let item of checkedFilter().driveSystems"
+        >
+          {{ item.title }}
+        </nz-tag>
+      </div>
+      <app-cars-grid></app-cars-grid>
       <p>cars works!</p>
     </div>
   </nz-content>
